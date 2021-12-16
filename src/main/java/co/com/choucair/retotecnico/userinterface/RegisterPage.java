@@ -5,7 +5,7 @@ import net.serenitybdd.screenplay.targets.Target;
 import org.openqa.selenium.By;
 
 public class RegisterPage extends PageObject {
-    public static final Target REGISTER_BUTTON = Target.the("Button that shows us the registration form").located(By.className("unauthenticated-nav-bar__sign-up"));
+    public static final Target REGISTER_BUTTON = Target.the("Button that shows us the registration form").located(By.xpath("//a[@href='/signup/personal']"));//className("unauthenticated-nav-bar__sign-up"));
     public static final Target INPUT_NAME = Target.the("Where do we write the first name").located(By.id("firstName" ));
     public static final Target INPUT_LASTNAME = Target.the("Where do we write the last name").located(By.id("lastName" ));
     public static final Target INPUT_EMAIL = Target.the("Where do we write the E-mail").located(By.id("email" ));

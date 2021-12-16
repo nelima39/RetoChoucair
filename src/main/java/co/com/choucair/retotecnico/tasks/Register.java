@@ -18,13 +18,13 @@ public class Register implements Task {
     private String strBirthYear;
 
     public Register( String strName, String strLastName, String strEmail, String strLanguage, String strBirthMonth, String strBirthDay, String strBirthYear) {
-        this.strName = strName;
-        this.strLastName = strLastName;
-        this.strEmail = strEmail;
-        this.strLanguage = strLanguage;
-        this.strBirthMonth = strBirthMonth;
-        this.strBirthDay = strBirthDay;
-        this.strBirthYear = strBirthYear;
+        this.strName        = strName;
+        this.strLastName    = strLastName;
+        this.strEmail       = strEmail;
+        this.strLanguage    = strLanguage;
+        this.strBirthMonth  = strBirthMonth;
+        this.strBirthDay    = strBirthDay;
+        this.strBirthYear   = strBirthYear;
     }
     public static Register onThePage(String strName, String strLastName, String strEmail, String strLanguage, String strBirthMonth, String strBirthDay, String strBirthYear) {
         return Tasks.instrumented(Register.class, strName, strLastName, strEmail, strLanguage, strBirthMonth, strBirthDay, strBirthYear);
@@ -40,7 +40,6 @@ public class Register implements Task {
                 SelectFromOptions.byVisibleText(strBirthDay).from(RegisterPage.SELECT_BIRTHDAY),
                 SelectFromOptions.byVisibleText(strBirthYear).from(RegisterPage.SELECT_BIRTHYEAR),
                 Enter.theValue(strLanguage).into(RegisterPage.INPUT_LANGUAGE),
-                //Thread.sleep(3.000);
                 Click.on(RegisterPage.LOCATION_BUTTON)
 
         );
